@@ -19,6 +19,6 @@
 - Provide analysis 
 - Visual representation that help to prove the provided analysi
 
-## Data Sourcing
+### Data Sourcing
 - API Yahoo + Python: we use: https://pypi.org/project/yfinance/
 
