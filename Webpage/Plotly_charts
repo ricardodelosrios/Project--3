@@ -1,0 +1,61 @@
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
+from dash.dependencies import Input, Output
+import pandas as pd
+import plotly.graph_objs as go
+
+# Define the file path to your CSV file
+csv_file_path = "../Stock_data/Merged_historical_stock_data_daily.csv"
+
+# Read the CSV file with your data, specifying the delimiter as '\t' for tab-separated values
+df = pd.read_csv(csv_file_path)
+
+app = dash.Dash(__name__)
+
+# Define the layout of the app
+app.layout = html.Div([
+    html.H1('Candlestick Chart'),
+    dcc.Dropdown(
+        id='stock-selector',
+        options=[
+            {'label': 'AAPL', 'value': 'AAPL'},
+            {'label': 'GOOGL', 'value': 'GOOGL'},
+            {'label': 'META', 'value': 'META'},
+            {'label': 'MSFT', 'value': 'MSFT'},
+            {'label': 'NVDA', 'value': 'NVDA'},
+        ],
+        value='AAPL',  # Initial selected stock
+    ),
+    dcc.Graph(id='candlestick-chart'),
+])
+
+# Define callback to update the chart based on the selected stock
+@app.callback(
+    Output('candlestick-chart', 'figure'),
+    [Input('stock-selector', 'value')]
+)
+def update_chart(selected_stock):
+    filtered_df = df[df['ticker'] == selected_stock]  # Use 'ticker' as the column name
+
+    # Prepare data for candlestick chart
+    trace = go.Candlestick(
+        x=filtered_df['date'],
+        open=filtered_df['open'],
+        high=filtered_df['high'],
+        low=filtered_df['low'],
+        close=filtered_df['close'],
+        name='Candlestick'
+    )
+
+    return {
+        'data': [trace],
+        'layout': {
+            'title': f'{selected_stock} Candlestick Chart',
+            'xaxis': {'title': 'Date'},
+            'yaxis': {'title': 'Price'},
+        }
+    }
+
+if __name__ == '__main__':
+    app.run_server(debug=True)
