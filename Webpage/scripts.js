@@ -5,7 +5,7 @@ new TradingView.widget(
         "height": 400,
         "symbol": "AAPL", // Replace with your desired symbol
         "interval": "D", // Replace with your desired interval
-        "timezone": "Etc/UTC",
+        "timezone": "America/New_York",
         "theme": "Light",
         "style": "1",
         "locale": "en",
