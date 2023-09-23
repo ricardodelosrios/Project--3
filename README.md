@@ -1,6 +1,6 @@
 # Project 3 -  Group 1
 
-- Alex Hamilton
+- Alex H
 - Maria Kouider
 - Lina Orjuela
 - Ricardo Andrés De los ríos Hernández
