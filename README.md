@@ -23,3 +23,23 @@
 - API Yahoo + Python: we use: https://pypi.org/project/yfinance/
 
 ### Data Componenent 
+![Alt text](Images/Data Component.jpeg)
+
+### How to naviguate our webpage ? 
+- Dropdown:
+- 
+
+### Visualization - Candlestick Chart 
+
+
+
+### Visualization - Bar Chart 
+
+
+### Visualization - Pie Chart 
+
+
+### Slides Link
+
+
+
