@@ -22,3 +22,4 @@
 ### Data Sourcing
 - API Yahoo + Python: we use: https://pypi.org/project/yfinance/
 
+### Data Componenent 
