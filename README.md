@@ -46,24 +46,34 @@ Open a terminal window and run the following commands:
 
 `pip install Flask`
 
-* [CORS](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?utm_source=ext_sidebar&hl=en-US) : The CORS (Cross-Origin Resource Sharing) extension in Chrome is not a standalone extension that users can install from the Chrome extension store. Instead, CORS is a security feature that is implemented in the Google Chrome web browser (and other browsers) to control and manage HTTP requests and responses between different domains or websites.
+
+Additionally, you need to open [Chrome Web Store](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?utm_source=ext_sidebar&hl=en-US) and search for *CORS* (Cross- Origin Resource Sharing) is a security feature implemented in the Google Chrome web browser (and other browsers) to control and manage HTTP requests and responses between different domains or websites.
 
 Simply activate the add-on and perform the request. CORS or Cross-Origin Resource Sharing is blocked in modern browsers by default (in JavaScript APIs). Installing this add-on will allow you to unblock this feature. Please note that, when the add-on is added to your browser, it is inactive by default (toolbar icon is grey C letter). If you want to activate the add-on, please open the toolbar popup and press the toggle button on the left side. The icon will turn to an orange C letter.
 
-
-
-
-
-
-
-
-
-
 ### Data Sourcing
-- API Yahoo + Python: we use: https://pypi.org/project/yfinance/
+
+Stock data for *Apple, Nvidia, Microsoft, Google (Alphabet Inc.), and Meta Platforms, Inc.* for the period January to September 2023 was obtained using the Python library from Yahoo Finance  [yfinance](https://pypi.org/project/yfinance/) that provides a simple and powerful interface for accessing real-time and historical financial data for a variety of assets, including stocks.
+
+Using this library, we were able to access detailed information on the stock performance of these companies, including opening and closing prices, trading volumes, highest and lowest price per day and more. This allowed us to analyze and visualize the evolution of share prices throughout the first nine months of 2023, which in turn facilitated the study of trends and patterns in the financial market.
+
+In the folder called [Stock_data]([https://pypi.org/project/yfinance/](https://github.com/ricardodelosrios/Project--3/tree/main/Stock_data)) you can find the files with the databases that were obtained for each of the actions:
+
+      * [AAPL_historical_stock_data_daily.csv](https://github.com/ricardodelosrios/Project--3/tree/main/Stock_data)
+      * [GOOGL_historical_stock_data_daily.csv](https://github.com/ricardodelosrios/Project--3/tree/main/Stock_data)
+      * [META_historical_stock_data_daily.csv](https://github.com/ricardodelosrios/Project--3/tree/main/Stock_data)
+      * [MSFT_historical_stock_data_daily.csv](https://github.com/ricardodelosrios/Project--3/tree/main/Stock_data)
+      * [Merged_historical_stock_data_daily.csv](https://github.com/ricardodelosrios/Project--3/tree/main/Stock_data) **********
+      * [NVDA_historical_stock_data_daily.csv](https://github.com/ricardodelosrios/Project--3/tree/main/Stock_data)
+
+### PostgreSQL
+Once we have the data of the stocks. We are going to follow the following steps, taking into account the files found in the folder called `Postgres_Database`:
+
+1. Create a Database: We will use the creation of the PostgreSQL database to store structured data in tables, which makes it easier to organize and recover.To do this, the query found in the following file was used [Postgres_Database/Create_database.sql](https://github.com/ricardodelosrios/Project--3/tree/main/Postgres_Database).
+
 
 ### Data Componenent 
-![Alt text](Images/Data Component.jpeg)
+![Alt text](https://github.com/ricardodelosrios/Project--3/blob/main/Images/Data%20Component.jpeg)
 
 ### How to naviguate our webpage ? 
 - Dropdown:
