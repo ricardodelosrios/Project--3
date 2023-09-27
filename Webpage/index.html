@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +13,7 @@
     <!-- Include D3.js library -->
     <script src="https://d3js.org/d3.v6.min.js"></script>
 
+    
     <!-- Include TradingView Widget Script -->
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 
@@ -32,7 +34,14 @@
         <section class="left">
             <div class="chart large-chart" id="candlestick-chart1"></div>
         </section>
-
+    </div>
+    <div class="container">
+        <section class="left">
+            <div class="chart large-chart">
+                <h2>Indicators</h2>
+                <div class="chart large-chart" id="indicators-chart"></div>
+            </div>
+        </section>
      </div>
     <div class="container">
         <section class="left">
@@ -42,13 +51,20 @@
             </div>
         </section>
 
+
         <section class="right">
             <div class="chart small-chart">
                 <h2>Pie Chart</h2>
                 <div class="chart small-chart" id="pie-chart3"></div>
             </div>
         </section>
-
+               
+        <!-- First TradingView Chart Container -->
+        <div class="chart-container">
+        <div id="tv-chart-1" data-widget="lightchart"></div>
+            <h2> TradingView Chart </h2>
+        </div>
+        
         
     </div>
 
@@ -60,12 +76,8 @@
     <script src="./visualization/visualization_1.js"></script>
     <script src="./visualization/visualization_2.js"></script>
     <script src="./visualization/visualization_3.js"></script>
-
-        <!-- First TradingView Chart Container -->
-        <div class="chart-container">
-            <div id="tv-chart-1" data-widget="lightchart"></div>
-        </div>
-        <script src="scripts.js"></script> 
+    <script src="./visualization/indicators.js"></script>
+    <script src="scripts.js"></script> 
         
 
         

@@ -26,6 +26,8 @@ loadDropdown()
     updateCandlestickChart(selectedStock);
     updateBarChart(selectedStock);
     updatePieChart(selectedStock, '2023-01-03');
+    updateIndicatorsChart(selectedStock);
+
   })
   .catch(function (error) {
     console.error("Error:", error);

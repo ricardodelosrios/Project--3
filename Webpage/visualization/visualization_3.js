@@ -1,4 +1,3 @@
-
 // Function to update the Plotly pie based on the selected stock and date
 function updatePieChart(selectedStock, selectedDate) {
     // Load data from API
