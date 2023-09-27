@@ -5,37 +5,42 @@ function updateIndicatorsChart(selectedStock) {
     // Fetch data from the API using d3.json
     d3.json(apiUrl).then(function (data) {
 
-        const period = 14; // ajusta el período según sea necesario
-        const shortPeriod = 12; // Período corto para el MACD
-        const longPeriod = 26; // Período largo para el MACD
-        const signalPeriod = 9; // Período de señal para el MACD
-        const rsiValues = []; // aquí almacenaremos los valores de RSI
+        const period = 14; // adjust the period as needed
+        const shortPeriod = 12; // Short period for MACD
+        const longPeriod = 26; // Long period for MACD
+        const signalPeriod = 9; // Signal period for MACD
+        const rsiValues = []; // here we will store the RSI values
 
         
+        // This for loop iterates through the historical stock data, starting from day number period (in this case, 14) until the end of the data.
         for (let i = period; i < data.length; i++) {
+            // Two arrays, gains and losses, are created to store positive price changes (gains) and negative price changes (losses) during the specified period.
             const gains = [];
             const losses = [];
-
+            //This for loop iterates through the data within the specified period and calculates price changes between consecutive days.
             for (let j = i - period; j < i; j++) {
+                //The price change between day j and day j+1 is calculated.
                 const priceChange = data[j + 1].close - data[j].close;
+                //Positive price changes are added to the gains array, while negative (or zero) price changes are added to the losses array
                 if (priceChange > 0) {
                     gains.push(priceChange);
                 } else {
-                    losses.push(Math.abs(priceChange));
+                    losses.push(Math.abs(priceChange));//Math.abs() is used to ensure that losses are positive values.
                 }
             }
-
+            //The Relative Strength (RS) is calculated by dividing the average gain by the average loss.
             const averageGain = gains.reduce((acc, val) => acc + val, 0) / period;
             const averageLoss = losses.reduce((acc, val) => acc + val, 0) / period;
 
             const RS = averageGain / averageLoss;
+            //The RSI is calculated using the standard RSI formula.
             const RSI = 100 - (100 / (1 + RS));
 
-            // Almacenamos el valor de RSI en el array
+            // We store the RSI value in the array
             rsiValues.push(RSI);
         }
 
-        // Función para calcular el Simple Moving Average (SMA)
+        // Function to calculate the Simple Moving Average (SMA)
         function calculateSMA(data, period) {
             const smaValues = [];
             for (let i = period - 1; i < data.length; i++) {
@@ -46,7 +51,7 @@ function updateIndicatorsChart(selectedStock) {
             return smaValues;
         }
         
-        // Función para calcular el Exponential Moving Average (EMA)
+        // Function to calculate the Exponential Moving Average (EMA)
         function calculateEMA(data, period) {
             const emaValues = [];
             const multiplier = 2 / (period + 1);
@@ -62,62 +67,12 @@ function updateIndicatorsChart(selectedStock) {
             return emaValues;
         }
         
-        /*
-        // Función para calcular el Simple Moving Average (SMA)
-        function calculateSMA(data, period) {
-            const smaValues = [];
-            
-            for (let i = 0; i < data.length; i++) {
-                if (i < period - 1) {
-                    // No hay suficientes datos para calcular el SMA, por lo que simplemente agregamos el precio de cierre.
-                    const closePrice = data[i].close;
-                    smaValues.push(closePrice);
-                } else {
-                    // Calculamos el promedio de los últimos 'period' precios de cierre.
-                    const sum = data.slice(i - period + 1, i + 1)
-                        .map(item => item.close)
-                        .reduce((a, b) => a + b, 0);
-                    const sma = sum / period;
-                    smaValues.push(sma);
-                }
-            }
-            
-            return smaValues;
-        
-        }
-        
-        // Calcular EMA
-        function calculateEMA(data, period) {
-            const emaValues = [];
-            const multiplier = 2 / (period + 1);
-            let ema = 0;
-        
-            for (let i = 0; i < data.length; i++) {
-                const closePrice = data[i].close;
-        
-                if (i < period - 1) {
-                    // No hay suficientes datos para calcular el EMA, por lo que simplemente agregamos el precio de cierre.
-                    ema += closePrice;
-                } else if (i === period - 1) {
-                    // Calculamos el promedio simple para el período inicial.
-                    ema = ema / period + closePrice;
-                } else {
-                    // Calculamos el EMA utilizando la fórmula.
-                    ema = (closePrice - ema) * multiplier + ema;
-                }
-        
-                emaValues.push(ema);
-            }
-        
-            return emaValues;
-        }
-        */
-        // Calcula las medias móviles
+        // Calculate mobile media
 
         const smaValues = calculateSMA(data, period);
         const emaValues = calculateEMA(data, period);
 
-         // Función para calcular el Moving Average Convergence Divergence (MACD)
+         // Function to calculate the Moving Average Convergence Divergence (MACD)
         function calculateMACD(data, shortPeriod, longPeriod, signalPeriod) {
             const shortEMA = calculateEMA(data, shortPeriod);
             const longEMA = calculateEMA(data, longPeriod);
@@ -179,22 +134,22 @@ function updateIndicatorsChart(selectedStock) {
             name: 'MACD Histogram'
         };
 
-        // Define el diseño de la gráfica
+        // Define the layout of the graph
         const layout = {
             title: `${selectedStock} Indicators`,
             xaxis: { title: 'Date' },
             yaxis: { title: 'Value' }
         };
 
-        // Crea la matriz de datos de traza
+        // Create the trace data array
         const plotData = [rsiTrace, macdTrace, signalTrace, histogramTrace];
 
-        // Crea la gráfica con Plotly
+        // Create the graph with Plotly
         Plotly.newPlot('indicators-chart', plotData, layout);
     });
 }
 
-// Event listener para el cambio de selección de acciones
+// Event listener for action selection change
 document.getElementById('stock-select').addEventListener('change', function () {
     let selectedStock = this.value;
     updateIndicatorsChart(selectedStock);
