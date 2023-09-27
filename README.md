@@ -27,6 +27,36 @@ The need to understand how these leading companies in the technology sector have
 
 ### Installation
 
+Open a terminal window and run the following commands:
+
+* [psycopg2](https://pypi.org/project/psycopg2/) : is a module that allows Python applications to establish a connection with PostgreSQL databases. In fact, psycopg2 is a PostgreSQL driver designed for Python programmers, opening the door to communicating with PostgreSQL databases through code.
+
+`pip install psycopg2`
+`pip install psycopg2-binary`
+
+* [SQLAlchemy]([https://pypi.org/project/psycopg2/](https://pypi.org/project/SQLAlchemy/)) : SQLAlchemy is a powerful object-relational mapping (ORM) library that makes it easy to interact with relational databases from Python applications.
+
+`pip install SQLAlchemy`
+
+* [Python-dotenv](https://pypi.org/project/python-dotenv/) : It is used to install the python-dotenv library in Python. This library is a useful tool for loading configurations and environment variables from .env files into your Python projects.
+
+`pip install python-dotenv`
+
+* [Flask](https://pypi.org/project/Flask/) : It is used to install the Flask web framework in Python. Flask is a lightweight and flexible web microframework used to create fast and easy web applications in Python.
+
+`pip install Flask`
+
+* [CORS](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?utm_source=ext_sidebar&hl=en-US) : The CORS (Cross-Origin Resource Sharing) extension in Chrome is not a standalone extension that users can install from the Chrome extension store. Instead, CORS is a security feature that is implemented in the Google Chrome web browser (and other browsers) to control and manage HTTP requests and responses between different domains or websites.
+
+Simply activate the add-on and perform the request. CORS or Cross-Origin Resource Sharing is blocked in modern browsers by default (in JavaScript APIs). Installing this add-on will allow you to unblock this feature. Please note that, when the add-on is added to your browser, it is inactive by default (toolbar icon is grey C letter). If you want to activate the add-on, please open the toolbar popup and press the toggle button on the left side. The icon will turn to an orange C letter.
+
+
+
+
+
+
+
+
 
 
 ### Data Sourcing
