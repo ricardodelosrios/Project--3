@@ -63,10 +63,12 @@
     </div>
 </body>
 
+<!-- Add an input element to display the result -->
+<input type="text" id="analysis-result" readonly>
+
 <!-- Function to generate stock analysis -->
 <script>
     function generateStockAnalysis(stockSymbol) {
-        // Example: Generate analysis based on the selected stock
         if (stockSymbol === 'AAPL') {
             return 'Apple Inc. (AAPL) is ';
         } else if (stockSymbol === 'GOOGL') {
@@ -81,6 +83,16 @@
             return 'No analysis available for this stock.';
         }
     }
+
+    // Get a reference to the input element
+    const analysisResultInput = document.getElementById('analysis-result');
+
+    // Example: Call the function and display the result
+    const stockSymbol = 'AAPL'; // You can change this to the selected stock symbol
+    const analysisResult = generateStockAnalysis(stockSymbol);
+    
+    // Set the result in the input element
+    analysisResultInput.value = analysisResult;
 </script>
 
 <footer>
