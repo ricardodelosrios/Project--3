@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Charts</title>
+
+    <!-- Include Plotly library -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- Include D3.js library -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+
+    <!-- Include TradingView Widget Script -->
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Include the CSS file -->
+</head>
+
+<body class="body">
+    <header>
+        <h1>Visualizations</h1>
+    </header>
+    <!-- Stock Selection Dropdown -->
+    <div class="stock-select-container">
+        <label for="stock-select">Select a Stock:</label>
+        <select id="stock-select">
+        </select>
+    </div>
+    <div class="container">
+        <section class="left">
+            <div class="chart large-chart" id="candlestick-chart1"></div>
+        </section>
+    </div>
+    <div class="container">
+        <section class="left">
+            <div class="chart large-chart">
+                <h2>Indicators</h2>
+                <div class="chart large-chart" id="indicators-chart"></div>
+            </div>
+        </section>
+    </div>
+    <div class="container">
+        <section class="left">
+            <div class="chart large-chart">
+                <h2>Bar Chart</h2>
+                <div class="chart large-chart" id="bar-chart2"></div>
+            </div>
+        </section>
+    </div>
+    <section class="right">
+        <div class="chart small-chart">
+            <h2>Pie Chart</h2>
+            <div class="chart small-chart" id="pie-chart3"></div>
+        </div>
+    </section>
+
+    <!-- First TradingView Chart Container -->
+    <div class="chart-container">
+        <div id="tv-chart-1" data-widget="lightchart"></div>
+        <h2>TradingView Chart</h2>
+    </div>
+</body>
+
+<!-- Function to generate stock analysis -->
+<script>
+    function generateStockAnalysis(stockSymbol) {
+        // Example: Generate analysis based on the selected stock
+        if (stockSymbol === 'AAPL') {
+            return 'Apple Inc. (AAPL) is ';
+        } else if (stockSymbol === 'GOOGL') {
+            return 'Alphabet Inc. (GOOGL) is ';
+        } else if (stockSymbol === 'META') {
+            return 'Meta Platforms, Inc. (META) is ';
+        } else if (stockSymbol === 'MSFT') {
+            return 'Microsoft Corporation (MSFT) is ';
+        } else if (stockSymbol === 'NVDA') {
+            return 'NVIDIA Corporation (NVDA) is .';
+        } else {
+            return 'No analysis available for this stock.';
+        }
+    }
+</script>
+
+<footer>
+    <p>2023</p>
+</footer>
+
+<script src="./visualization/ticker.js"></script>
+<script src="./visualization/visualization_1.js"></script>
+<script src="./visualization/visualization_2.js"></script>
+<script src="./visualization/visualization_3.js"></script>
+<script src="./visualization/indicators.js"></script>
+<script src="scripts.js"></script>
+</html>
