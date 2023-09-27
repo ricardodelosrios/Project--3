@@ -133,8 +133,6 @@ In the folder called [Webpage](https://github.com/ricardodelosrios/Project--3/tr
 
 ### Developers
 
-## Developers
-
 | [<img src="https://avatars.githubusercontent.com/u/133066908?v=4" width=115><br><sub>Ricardo De Los Rios</sub>](https://github.com/ricardodelosrios) | [<img src="https://avatars.githubusercontent.com/u/135395351?v=4" width=115><br><sub>Lina Orjuela</sub>](https://github.com/LM202345) | [<img src="https://avatars.githubusercontent.com/u/134927163?v=4" width=115><br><sub>Alex H</sub>](https://github.com/Alex-WRK) |[<img src="https://avatars.githubusercontent.com/u/135670783?v=4" width=115><br><sub>Maria Kouider</sub>](https://github.com/mariakouider) |
 | :---: | :---: | :---: | :---: |
 
