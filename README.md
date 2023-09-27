@@ -123,7 +123,9 @@ In the folder called [Webpage](https://github.com/ricardodelosrios/Project--3/tr
 9. [ticker.js](https://github.com/ricardodelosrios/Project--3/blob/main/Webpage/visualization/ticker.js): This code is a sequence of JavaScript operations used to load data from an API, populate a dropdown list, and then call all functions to update graphics on a web page.    
 
 ### Data Componenent 
-![Alt text](https://github.com/ricardodelosrios/Project--3/blob/main/Images/Data%20Component.jpeg)
+
+![image](https://github.com/ricardodelosrios/Project--3/assets/135395351/4c948047-94ad-45e5-b66e-00d7a40cb93b)
+
 
 ### Overall Analysis 
 
