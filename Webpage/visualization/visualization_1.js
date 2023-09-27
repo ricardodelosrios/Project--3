@@ -77,6 +77,9 @@ function updateCandlestickChart(selectedStock) {
 
         // Update the existing chart using Plotly
         Plotly.react('candlestick-chart1', [trace], layout);
+
+        
+
     });
 }
 
