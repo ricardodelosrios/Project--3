@@ -6,6 +6,7 @@ from sqlalchemy import create_engine, func
 
 from flask import Flask, jsonify
 from flask import request
+from flask_cors import CORS
 from datetime import datetime
 
 import os
@@ -31,7 +32,7 @@ Stock = Base.classes.stocks
 # Flask Setup
 #################################################
 app = Flask(__name__)
-
+CORS(app)
 #################################################
 # Flask Routes
 #################################################
