@@ -99,7 +99,7 @@ In the folder called [API](https://github.com/ricardodelosrios/Project--3/tree/m
 
 * **Loading Environment Variables**: Before you begin, you will need to create a file called `env` to load database credentials from an environment (.env) file to keep passwords and connection information secure. You can use the following line of code:
 `DATABASE_URL=postgresql+psycopg2://postgres:Password@localhost:5432/project3`
-* **Correr el comando python -m stock_api**: se utiliza para ejecutar una aplicación Flask en un módulo específico llamado stock_api. Esta forma de ejecución es útil cuando se tiene un proyecto Flask organizado como un paquete en lugar de un script independiente, en este caso el archivo stock_api.py.
+* **Running the command python -m stock_api**:is used to execute a Flask application in a specific module named stock_api. This method of execution is useful when you have a Flask project organized as a package rather than an independent script, in this case, the stock_api.py file.
 `python -m stock_api`
 * **Creating a Database Connection**: Next, create a connection to the database using SQLAlchemy and the information provided in the .env file.
 * **Flask application initialization**: A Flask application is initialized, which is used to create a web API.
