@@ -46,6 +46,10 @@ Open a terminal window and run the following commands:
 
 `pip install Flask`
 
+* [Flask-cors](https://pypi.org/project/Flask-Cors/) : It allows a Flask application to handle resource requests from other domains, which is essential for building a web application that interacts with external services through an API.
+
+`pip install flask-cors`
+
 
 Additionally, you need to open [Chrome Web Store](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?utm_source=ext_sidebar&hl=en-US) and search for *CORS* (Cross- Origin Resource Sharing) is a security feature implemented in the Google Chrome web browser (and other browsers) to control and manage HTTP requests and responses between different domains or websites.
 
@@ -63,14 +67,14 @@ In the folder called [Stock_data]((https://github.com/ricardodelosrios/Project--
   * [GOOGL_historical_stock_data_daily.csv](https://github.com/ricardodelosrios/Project--3/tree/main/Stock_data)
   * [META_historical_stock_data_daily.csv](https://github.com/ricardodelosrios/Project--3/tree/main/Stock_data)
   * [MSFT_historical_stock_data_daily.csv](https://github.com/ricardodelosrios/Project--3/tree/main/Stock_data)
-  * [Merged_historical_stock_data_daily.csv](https://github.com/ricardodelosrios/Project--3/tree/main/Stock_data) **********
+  * [Merged_historical_stock_data_daily.csv](https://github.com/ricardodelosrios/Project--3/tree/main/Stock_data) 
   * [NVDA_historical_stock_data_daily.csv](https://github.com/ricardodelosrios/Project--3/tree/main/Stock_data)
 
 ### PostgreSQL
 Once we have the data of the stocks. We are going to follow the following steps, taking into account the files found in the folder called `Postgres_Database`:
 
 1. **Create a Database**: It will use the creation of the PostgreSQL database to store structured data in tables, which makes it easier to organize and recover.To do this, the query found in the following file was used [Create_database.sql](https://github.com/ricardodelosrios/Project--3/blob/main/Postgres_Database/Create_database.sql).
-2. **Create tables**: In the file called [Create_tables.sql] (https://github.com/ricardodelosrios/Project--3/blob/main/Postgres_Database/Create_tables.sql), there are the queries to create the following tables:
+2. **Create tables**: In the file called [Create_tables.sql](https://github.com/ricardodelosrios/Project--3/blob/main/Postgres_Database/Create_tables.sql), there are the queries to create the following tables:
 
       * tickers
       * stocks
@@ -131,6 +135,9 @@ In the folder called [Webpage](https://github.com/ricardodelosrios/Project--3/tr
 
 
 ### Slides Link
+
+The presentation is available at the following link.[Finance Stocks](https://www.canva.com/design/DAFvrgyDjnY/aRJiXVg-kai4ImBi2jGwnw/view?utm_content=DAFvrgyDjnY&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
+
 
 
 ### Developers
