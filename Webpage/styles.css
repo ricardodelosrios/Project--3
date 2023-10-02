@@ -42,7 +42,7 @@ body {
 /* Footer */
 footer {
     background-color: #333;
-    color: #fff;
+    color: #ffffff15;
     padding: auto;
     height: 10mm;
     text-align: center;
@@ -58,4 +58,53 @@ header {
     text-align: center;
     font-size: 24px;
     font-weight: bold;
+}
+
+a {
+    color: rgba(190, 190, 190, 0); 
+    text-decoration: none; /* Remove underlines from links */
+}
+
+/* Visited link styles */
+a:visited {
+    color: rgba(190, 190, 190, 0); 
+}
+
+/* Hover link styles (when you hover over a link) */
+a:hover {
+    color:  rgba(190, 190, 190, 0)ue; 
+}
+
+/* Active link styles (when a link is clicked) */
+a:active {
+    color:  rgba(190, 190, 190, 0); 
+}
+
+.tradingview-container {
+    width: 10%; /* Adjust the width as needed, e.g., '80%' or '500px' */
+    height: 1000px; 
+}
+
+/* Remove bullet points and display links horizontally */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* Add space between links */
+nav li {
+    margin-right: 20px;
+}
+
+/* Style for the links */
+nav a {
+    color: blue; /* Link color */
+    text-decoration: none; /* Remove underlines */
+}
+
+/* Hover effect for links */
+nav a:hover {
+    text-decoration: underline;
 }

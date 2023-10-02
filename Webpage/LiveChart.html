@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Candlestick Chart - Stock Analysis</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Include the CSS file -->
+    <style>
+        /* Add custom CSS for navigation */
+        header nav ul {
+            list-style: none; /* Remove bullet points */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Display links horizontally */
+        }
+
+        header nav ul li {
+            margin-right: 20px; /* Adjust spacing between links */
+        }
+
+        /* Link styles */
+        header nav ul li a {
+            color: blue; /* Set link color to blue */
+            text-decoration: none; /* Remove underlines from links */
+        }
+
+        /* Hover link styles (when you hover over a link) */
+        header nav ul li a:hover {
+            text-decoration: underline; /* Underline links on hover */
+        }
+
+        /* Custom style for the clickable link */
+        .start-link a {
+            color: rgb(49, 34, 255); /* Set a different color for this link */
+        }
+    </style>
+</head>
+<body class="body">
+    <header>
+        <h1>Live Chart</h1>
+        <nav>
+            <ul>
+                <li><a href="Landing.html">Home</a></li>
+                <li><a href="index.html">Historical Dashboard</a></li>
+                <li><a href="CandleCharts.html">Chart Elements</a></li>
+                <li><a href="Patterns.html">Candle Chart Patterns</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <!-- Add more links to other pages as needed -->
+            </ul>
+        </nav>
+    </header>
+    <section class="page-content">
+        <div class="introduction">
+            <h2>Live Chart Powered by Tradingview</h2>
+            <p>Explore real-time chart data for your selected stock, forex, crypto and much more below.</p>
+            <p>Are you ready to embark on a journey of financial discovery? <span class="start-link"><a href="https://www.tradingview.com/" target="_blank">Click here</a></span> to unlock your trading potential for free with TradingView!</p>
+            <p><strong>Disclaimer:</strong> We do not own this mesmerizing live chart, it is owned and powered by TradingView, the ultimate platform for traders and investors.</p>
+        </div>
+        <div class="chart-container">
+            <div id="tv-chart-container"></div>
+        </div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script>
+            new TradingView.widget({
+                "autosize": false, // Disable automatic resizing
+                "symbol": "NASDAQ:AAPL", // Replace with the desired stock symbol
+                "interval": "D", // Set the interval (e.g., D for daily)
+                "timezone": "Etc/UTC",
+                "theme": "light",
+                "style": "1",
+                "locale": "en",
+                "toolbar_bg": "#f1f3f6",
+                "enable_publishing": false,
+                "allow_symbol_change": true,
+                "container_id": "tv-chart-container",
+                "width": 800, // Set the desired width
+                "height": 600, // Set the desired height
+                "drawings_access": "enabled" // Enable drawing tools
+            });
+        </script>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Stock Analysis</p>
+    </footer>
+</body>
+</html>

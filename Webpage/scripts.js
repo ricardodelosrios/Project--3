@@ -61,3 +61,20 @@ new TradingView.widget({
 //     const selectedStock = this.value;
 //     updateCandlestickChart(selectedStock);
 // });
+
+function loadAAPLStockAnalysis() {
+    // Replace this URL with the actual URL or API endpoint for AAPL analysis
+    const analysisURL = 'https://example.com/aapl-analysis';
+  
+    // Make an HTTP request to fetch the analysis content
+    fetch(analysisURL)
+      .then((response) => response.text())
+      .then((data) => {
+        // Display the analysis content in the container
+        document.getElementById('stock-analysis-container').innerHTML = data;
+      })
+      .catch((error) => {
+        console.error('Error loading AAPL stock analysis:', error);
+      });
+  }
+  

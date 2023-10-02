@@ -3,13 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Analysis</title>
+    <title>Welcome to Stock Analysis</title>
     <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Include the CSS file -->
 </head>
 <body class="body">
+   
     <header>
-        <h1>Stock Dashboard - Top 5 Technology Industry Players</h1>
+        <h1>Historical Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="Landing.html">Home</a></li>
+                <li><a href="CandleCharts.html">Chart Elements</a></li>
+                <li><a href="Patterns.html">Candle Chart Patterns</a></li>
+                <li><a href="LiveChart.html">Live Chart</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <!-- Add more links to other pages as needed -->
+            </ul>
+        </nav>
     </header>
+    <section class="landing-content">
+        <p>Welcome to Stock Analysis, your one-stop destination for in-depth analysis of top technology stocks.</p>
+        <p>Explore the latest trends, stock performance, and financial insights for companies like Apple, Google, Meta, Microsoft, and NVIDIA.</p>
+        <p>Select a stock from the dropdown menu to get started.</p>
+    </section>
     <!-- Stock Selection Dropdown -->
     <div class="stock-select-container">
         <label for="stock-select">Select a Stock:</label>
@@ -34,7 +50,12 @@
             <div class="chart large-chart">
                 <h2>Candlestick Chart</h2>
             <div class="chart large-chart" id="candlestick-chart1"></div>
+            <!-- Description for Candlestick Chart 1 -->
+            <p>A candlestick chart as shown above is a visual representation of historical price and volume data for a particular financial asset, such as a stock, currency pair, or commodity. It typically displays the price movements of the asset over a specified time period, with time typically plotted on the horizontal axis (x-axis) and the asset's price on the vertical axis (y-axis).</p>
+            <hr style="background-color: black; height: 2px; margin: 20px 0;">    
+        </div>
             <div>
+             
         </section>
     </div>
 
@@ -43,6 +64,26 @@
             <div class="chart large-chart">
                 <h2>Indicators</h2>
                 <div class="chart large-chart" id="indicators-chart"></div>
+                <!-- Description for Candlestick Chart 1 -->
+                <p> <Strong>RSI (Relative Strength Index):</Strong>
+
+                RSI is a momentum oscillator used in technical analysis to measure the speed and change of price movements. It ranges from 0 to 100 and is typically displayed as an oscillator on a trading chart. RSI helps traders identify overbought (above 70) and oversold (below 30) conditions in an asset's price, indicating potential reversal points. It is calculated based on the average gain and loss of an asset's price over a specified period.</p>
+                
+                <p><Strong>MACD (Moving Average Convergence Divergence):</Strong>
+                
+                MACD is a trend-following momentum indicator that shows the relationship between two moving averages of an asset's price. It consists of two lines: the MACD line (the difference between a short-term and a long-term exponential moving average) and the SIGNAL line (a moving average of the MACD line). Traders use MACD to identify trend changes and potential buy or sell signals. When the MACD line crosses above the SIGNAL line, it generates a bullish signal, and when it crosses below, it generates a bearish signal.</p>
+                
+                </p><Strong>SIGNAL Line:</Strong>
+                
+                The SIGNAL line is a component of the MACD indicator. It represents a moving average of the MACD line and is used to smooth out the MACD's fluctuations. Crossovers between the MACD line and the SIGNAL line are used as trading signals. When the MACD crosses above the SIGNAL line, it often indicates a potential buy signal, while a crossover below suggests a potential sell signal.
+                
+                </p><Strong>MACD Histogram: </Strong>
+                
+                The MACD histogram is a visual representation of the difference between the MACD line and the SIGNAL line. It appears as a series of bars above or below the zero line on the MACD indicator. The histogram helps traders visualize the strength of the momentum. When the histogram bars move above the zero line, it suggests increasing bullish momentum, and when they move below, it indicates increasing bearish momentum. Crossovers above or below the zero line can signal potential buying or selling opportunities.
+                
+                These technical indicators are commonly used by traders to analyze price trends, identify potential reversals, and make informed decisions in financial markets. They provide valuable insights into market momentum and can assist in timing trades and managing risk.</p>
+                <hr style="background-color: black; height: 2px; margin: 20px 0;">
+            </div>
             </div>
         </section>
 
@@ -52,6 +93,9 @@
             <div class="chart large-chart">
                 <h2>Bar Chart</h2>
                 <div class="chart large-chart" id="bar-chart2"></div>
+                <p> <strong>Volume Transaction Bar Chart</strong></p>
+                <p> A Volume Bar Chart, is a graphical representation used in financial analysis to display the trading volume of a financial asset over a specific period, typically in bars or rectangles. Each bar on the chart represents a specific time interval, such as a day, hour, or minute, and the height of the bar indicates the total volume of transactions (the number of shares or contracts traded) during that time interval.</p>
+                <hr style="background-color: black; height: 2px; margin: 20px 0;">
             </div>
         </section>
     </div>
@@ -62,24 +106,11 @@
         </div>
     </section>
 
-    <!-- First TradingView Chart Container -->
-    <div class="container">
-        <section class="left">
-            <div class="chart large-chart">
-                <h2>TradingView Chart</h2>
-            <div id="tv-chart-1" data-widget="lightchart"></div>
-        </div>
-    </section>
-    </div>
-
     <!-- Include Plotly library -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <!-- Include D3.js library -->
     <script src="https://d3js.org/d3.v6.min.js"></script>
-
-    <!-- Include TradingView Widget Script -->
-    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 
     <!-- Add your stock analysis generation function here -->
     <script>
@@ -179,7 +210,12 @@
                 default:
                     return '';
             }
+            const defaultSymbol = 'AAPL';
+            const defaultAnalysis = generateStockAnalysis(defaultSymbol);
+            analysisResultDiv.innerHTML = defaultAnalysis;
         }
+        
+
 
         // Get a reference to the input element
         const analysisResultDiv = document.getElementById('analysis-result');
@@ -191,6 +227,11 @@
             const analysisResult = generateStockAnalysis(stockSymbol);
             analysisResultDiv.innerHTML = analysisResult;
         });
+
+        // Display default analysis for AAPL on page load
+        const defaultSymbol = 'AAPL';
+        const defaultAnalysis = generateStockAnalysis(defaultSymbol);
+        analysisResultDiv.innerHTML = defaultAnalysis;
     </script>
 
     <footer>
