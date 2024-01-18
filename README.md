@@ -1,31 +1,26 @@
-# Project 3 -  Group 1
+# Project 3 -  Group 1 🚀
 
-- Alex H
-- Maria Kouider
-- Lina Orjuela
-- Ricardo Andrés De los ríos Hernández
+## Industry: Finance 💹
 
-## Industry: Finance
-
-### Introduction
+### Introduction 📖
 
 In this project, the analysis of the historical stock prices of the five main companies in the technology industry (**Apple, Nvidia, Microsoft, Google (Alphabet Inc.) and Meta Platforms, Inc.**) will be carried out. To understand the trends, patterns and underlying dynamics of the tech industry giants.
 
 This academic exercise seeks to harness the power of programming languages and tools such as JavaScript, Python, PostgreSQL, along with libraries such as sqlalchemy, dotenv, Flask, D3.js, Plotly and Widget. Through these tools we delve into the analysis of historical stock prices (January to September 2023).
 
-### Question
+### Question ❓ 
 
-#### ¿What are the historical stock prices over 9 months of the top 5 biggest technology industry players?
+#### ¿What are the historical stock prices over 9 months of the top 5 biggest technology industry players? ❔
 
-### Motivation
+### Motivation 🚩
 The need to understand how these leading companies in the technology sector have evolved in terms of market value in the period from January to September 2023. This data can be useful for investors, financial analysts, and people interested in the dynamics of the stock market, as it would allow them to identify patterns, trends, and investment opportunities based on the past performance of these companies. Additionally, it could help evaluate the impact of specific events, such as product launches, industry news, or changes in company management.
  
-### Why people would visit our webpage? 
+### Why people would visit our webpage? 📖
 - Gain insight on historical performance of stocks and get an analysis for top 5 biggest technology industry players.
 - Provide analysis.
 - Visual representation that help to prove the provided analysis.
 
-### Installation
+### Installation 📂
 
 Open a terminal window and run the following commands:
 
@@ -55,7 +50,7 @@ Additionally, you need to open [Chrome Web Store](https://chrome.google.com/webs
 
 Simply activate the add-on and perform the request. CORS or Cross-Origin Resource Sharing is blocked in modern browsers by default (in JavaScript APIs). Installing this add-on will allow you to unblock this feature. Please note that, when the add-on is added to your browser, it is inactive by default (toolbar icon is grey C letter). If you want to activate the add-on, please open the toolbar popup and press the toggle button on the left side. The icon will turn to an orange C letter.
 
-### Data Sourcing
+### Data Sourcing 📂
 
 Stock data for *Apple, Nvidia, Microsoft, Google (Alphabet Inc.), and Meta Platforms, Inc.* for the period January to September 2023 was obtained using the Python library from Yahoo Finance  [yfinance](https://pypi.org/project/yfinance/) that provides a simple and powerful interface for accessing real-time and historical financial data for a variety of assets, including stocks.
 
@@ -70,7 +65,7 @@ In the folder called [Stock_data]((https://github.com/ricardodelosrios/Project--
   * [Merged_historical_stock_data_daily.csv](https://github.com/ricardodelosrios/Project--3/tree/main/Stock_data) 
   * [NVDA_historical_stock_data_daily.csv](https://github.com/ricardodelosrios/Project--3/tree/main/Stock_data)
 
-### PostgreSQL
+### PostgreSQL 🖥
 Once we have the data of the stocks. We are going to follow the following steps, taking into account the files found in the folder called `Postgres_Database`:
 
 1. **Create a Database**: It will use the creation of the PostgreSQL database to store structured data in tables, which makes it easier to organize and recover.To do this, the query found in the following file was used [Create_database.sql](https://github.com/ricardodelosrios/Project--3/blob/main/Postgres_Database/Create_database.sql).
@@ -86,7 +81,7 @@ Once we have the data of the stocks. We are going to follow the following steps,
         
 3. **Import data**: Once it created the tables, it will import the data from the files that are in the [Stock_data]((https://github.com/ricardodelosrios/Project--3/tree/main/Stock_data)) folder.
 
-### API web
+### API web 🔌
 
 The API allows you to consult information about stocks and their respective tickers, as well as retrieve stock volume data for specific dates.
 In the folder called [API](https://github.com/ricardodelosrios/Project--3/tree/main/API) you will find the following files that will help you run the program:
@@ -95,7 +90,7 @@ In the folder called [API](https://github.com/ricardodelosrios/Project--3/tree/m
             
   * [stock_api.py](https://github.com/ricardodelosrios/Project--3/tree/main/API):contains the code to create the API.
 
-#### How does the web API work?
+#### How does the web API work? 🗝
 
 * **Loading Environment Variables**: Before you begin, you will need to create a file called `env` to load database credentials from an environment (.env) file to keep passwords and connection information secure. You can use the following line of code:
 `DATABASE_URL=postgresql+psycopg2://postgres:Password@localhost:5432/project3`
@@ -109,7 +104,7 @@ In the folder called [API](https://github.com/ricardodelosrios/Project--3/tree/m
     * **"/api/v1.0/stock"**: (Get Stock): This path allows you to query information about stocks. You can specify a ticker to obtain information about a specific stock or not provide a ticker to obtain information about all stocks.
     * **"/api/v1.0/volume"**: - This path allows you to check the stock volume for a specific date. You can provide a date or not, and you will get volume data for that date or all dates, respectively.
 
-### Web page
+### Web page  💻
 In the folder called [Webpage](https://github.com/ricardodelosrios/Project--3/tree/main/Webpage) you can find the following files that were used to build the website:
 
 1. [Index.html](https://github.com/ricardodelosrios/Project--3/blob/main/Webpage/index.html): This HTML code defines the basic structure of a web page that will be used to display visualizations related to stock stocks. Specific visualizations will be generated and managed using JavaScript, and external libraries are included to make them easier to create. The user will be able to select an action and see related visualizations on the web page.
@@ -136,12 +131,12 @@ In the folder called [Webpage](https://github.com/ricardodelosrios/Project--3/tr
     **Function**:`updateIndicatorsChart(selectedStock)`
 19. [ticker.js](https://github.com/ricardodelosrios/Project--3/blob/main/Webpage/visualization/ticker.js): This code is a sequence of JavaScript operations used to load data from an API, populate a dropdown list, and then call all functions to update graphics on a web page.    
 
-### Data Componenent 
+### Data Componenent 📜
 
 ![image](https://github.com/ricardodelosrios/Project--3/assets/135395351/4c948047-94ad-45e5-b66e-00d7a40cb93b)
 
 
-### Overall Analysis 
+### Overall Analysis 🔍
 
 * Technology industry is a rapid growing sector.
 * There is benefit from technological innovation. 
@@ -150,13 +145,13 @@ In the folder called [Webpage](https://github.com/ricardodelosrios/Project--3/tr
 * Greater confidence in trade execution and liquidity.
 
 
-### Slides Link
+### Slides Link 📒
 
 The presentation is available at the following link.[Finance Stocks](https://www.canva.com/design/DAFvrgyDjnY/aRJiXVg-kai4ImBi2jGwnw/view?utm_content=DAFvrgyDjnY&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink).
 
 
 
-### Developers
+### Developers 🤯
 
 | [<img src="https://avatars.githubusercontent.com/u/133066908?v=4" width=115><br><sub>Ricardo De Los Rios</sub>](https://github.com/ricardodelosrios) | [<img src="https://avatars.githubusercontent.com/u/135395351?v=4" width=115><br><sub>Lina Orjuela</sub>](https://github.com/LM202345) | [<img src="https://avatars.githubusercontent.com/u/134927163?v=4" width=115><br><sub>Alex H</sub>](https://github.com/Alex-WRK) |[<img src="https://avatars.githubusercontent.com/u/135670783?v=4" width=115><br><sub>Maria Kouider</sub>](https://github.com/mariakouider) |
 | :---: | :---: | :---: | :---: |
